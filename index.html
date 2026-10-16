@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
             font-family: sans-serif;
             min-height: 100vh;
             display: flex;
+            /*Attiva la scatola intelligente e permette di usare altri comandi*/
             align-items: center;
             justify-content: center;
         }
@@ -26,6 +28,21 @@
             margin-bottom: 114px;
             margin-left: 60px;
             margin-right: 60px;
+        }
+
+        .titolo-pagina {
+            text-align: center;
+            /* Centra il testo all'interno della sua scatola */
+            margin-bottom: 24px;
+            /* Esattamente 24px di distanza sopra la card */
+            margin-top: 0;
+            /* Rimuove lo spazio bianco di default in alto */
+            width: 100%;
+            /* Occupa tutta la larghezza a disposizione */
+
+            /* Stile del testo */
+            font-size: 28px;
+            color: #1f2328;
         }
 
         .card {
@@ -41,6 +58,7 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            /*Definisce lo spazio vuoto tra gli elementi*/
         }
 
         .rigaForm {
@@ -64,7 +82,6 @@
             border-radius: 6px;
             font-size: 14px;
             font-family: inherit;
-            outline: none;
         }
 
         .btn-calcola {
@@ -81,9 +98,13 @@
         }
     </style>
 </head>
+
 <body>
 
     <main>
+
+        <h1 class="titolo-pagina">Calcolatore BMI</h1>
+
         <div class="card">
             <form action="calcolo-bmi.php" method="POST">
                 <div class="rigaForm">
@@ -107,4 +128,5 @@
     </main>
 
 </body>
+
 </html>

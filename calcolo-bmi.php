@@ -7,8 +7,12 @@ $altezzaCm = $_POST['altezza'];
 // 2. Calcolo del BMI
 $altezzaM = $altezzaCm / 100;
 $bmi = round($peso / ($altezzaM * $altezzaM), 1);
+//round è una funzione che taglia in questo caso i decimali dopo la virgla
+//lasciandone 1 arrotondando per eccesso
 
 // 3. Selezione della fascia e della classe CSS
+// nomeFascia è la scritta che apparre nel box
+// classeFascia è la classe css relativa alla fascia (sottopeso\normopeso\sovrappeso\obesita)
 if ($bmi < 18.5) {
     $classeFascia = "sottopeso";
     $nomeFascia = "Sottopeso";
@@ -31,20 +35,21 @@ if ($bmi < 18.5) {
     <title>Risultato BMI</title>
     <style>
         * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            box-sizing: border-box; 
+            /*Il box mantiene la sua grandezza amche aggiungrendo bordi e padding*/
+            margin: 0; /*Da distanza tra l'elemento e gli altri elementi*/
+            padding: 0; /*Da disatanza dall'interno dell'elemento*/
         }
 
         body {
             background-color: #f1f3f5;
             color: #1f2328;
             font-family: sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh; /*Prende tutta l'altezza visibile della pagina*/
+            display: flex; /*Abilita il centramento automatico  */
+            flex-direction: column; /*Dispone gli elementi in colonna */
+            align-items: center; /*Centra la card da sinistra e destra */
+            justify-content: center; /*Centra la card dall'alto e dal basso */
         }
 
         /* Titolo sopra la box */
@@ -130,7 +135,6 @@ if ($bmi < 18.5) {
             text-decoration: underline;
             font-weight: 500;
             color: #1f2328;
-            display: inline-block;
         }
     </style>
 </head>
