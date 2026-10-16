@@ -1,0 +1,41 @@
+PROMPT:
+
+Sviluppa codice html/css per costruire un layout contenente una card centrata
+verticalmente e orizzontalmente, box largo 360px, padding 24px con 60 px di margine 
+a destra e sinistra, 175px dall'alto 114px dal basso, sfondo della pagina
+#f1f3f5, sfondo della card bianco, colore testo #1f2328, font sans-serif, 
+contenuto centrato; 
+bordi arrotondati di 12 px; ombra leggera; 
+Il padding della card deve essere di 24px su tutti i lati. La card contiene dei campi dove è 
+possibile inserire un nome, il peso (kg), e l'altezza(cm); 
+la prima label+input per il nome ha padding di 24 px tranne verso il basso 
+dove ha padding di 16px rispetto al successivo campo e 260px rispetto alla fine
+della card. Continua per gli altri 2 campi rimanenti peso e altezza; 
+sotto i 3 campi la card contiene un tasto calcola con sfondo #1f2328 e scritta bianca
+"calcola", larghezza piena, angoli arrotondati 8px con padding 24px tranne verso l'alto
+dove ha padding di 284px rispetto al bordo
+superiore della card.
+
+
+
+
+Dopo aver premuto calcola devono essere visibili i risultati del cacolo del BMI.
+Crea un box con le seguenti caratteristiche:
+quattro classi
+<18.5 .sottopeso, sfondo #e3eef9, bordo #2f6fb3
+18.5-24.9 .normopeso, sfondo #e3f4e6, bordo #256d34
+25-29.9 -sovrappeso, sfondo #fcebd7, bordo #9a4f06
+>=30 .obesita, sfondo #fbe2e2, bordo #b32d2d
+
+Bordo 3px. La scritta della fascia usa lo stesso colore del bordo. 
+
+Sopra la box c'è la scritta "Il tuo BMI" con padding 174 px a destra e sinistra,
+162 dall'alto e 442 dal basso della pagina; 24 px in basso alla scritta crea un box
+di diversi colori celeste (sottopeso), verde(normopeso), arancione (sovrappeso), rosso (obesità).
+la box ha padding di 60px da destra e sinistra, ha bordo dello stesso colore spesso 3px ma più scuro e contiene il nome scritto in grassetto
+in alto con distanza dal bordo superiore della box di 27px; sotto di 8px dal nome c'è la 
+scritta che indica il peso e l'altezza "Peso ... kg Altezza ... cm"; sotto al peso e
+altezza di 16px si trova il BMI calcolato scritto grande in grassetto; sotto il bmi di
+16 px di trova la scritta che può essere (sottopeso, normopeso, sovrappeso, obesità) deve essere
+dello stesso colore del bordo;
+24 px sotto la box si trova una scritta sottolineata "Calcola di nuovo"
