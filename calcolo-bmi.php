@@ -1,8 +1,24 @@
 <?php
-// 1. Recupero dati inviati dal form
+
+$nome='';
+$peso=0;
+$altezzaCm=0;
+
+$altezzaM=0;
+$bmi=0;
+
+$classeFascia='';
+$nomeFascia='';
+
+
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // 1. Recupero dati inviati dal form
 $nome = $_POST['nome'];
 $peso = $_POST['peso'];
 $altezzaCm = $_POST['altezza'];
+
 
 // 2. Calcolo del BMI
 $altezzaM = $altezzaCm / 100;
@@ -26,7 +42,192 @@ if ($bmi < 18.5) {
     $classeFascia = "obesita";
     $nomeFascia = "Obesità";
 }
+}else{
+
+}
+
 ?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore BMI</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f1f3f5;
+            color: #1f2328;
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            /*Attiva la scatola intelligente e permette di usare altri comandi*/
+            align-items: center;
+            justify-content: center;
+        }
+
+        main {
+            margin-top: 175px;
+            margin-bottom: 114px;
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+
+        .titolo-pagina {
+            text-align: center;
+            /* Centra il testo all'interno della sua scatola */
+            margin-bottom: 24px;
+            /* Esattamente 24px di distanza sopra la card */
+            margin-top: 0;
+            /* Rimuove lo spazio bianco di default in alto */
+            width: 100%;
+            /* Occupa tutta la larghezza a disposizione */
+
+            /* Stile del testo */
+            font-size: 28px;
+            color: #1f2328;
+        }
+
+        .card {
+            background-color: #ffffff;
+            width: 360px;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            /*spost. lat obrma/spost. vert ombra/raggio sfumatura/0 0 0 nero/opacita*/
+            text-align: center;
+        }
+
+        .card form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            /*Definisce lo spazio vuoto tra gli elementi*/
+        }
+
+        .rigaForm {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .rigaForm label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1f2328;
+        }
+
+        .rigaForm input[type="text"],
+        .rigaForm input[type="number"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .btn-calcola {
+            width: 100%;
+            background-color: #1f2328;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<?php
+    if($_SERVER["REQUEST_METHOD"] == "GET"){
+?>
+
+
+
+
+    <main>
+
+        <h1 class="titolo-pagina">Calcolatore BMI</h1>
+
+        <div class="card">
+            <form action="calcolo-bmi.php" method="POST">
+                <div class="rigaForm">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" name="nome" placeholder="Inserisci il tuo nome" required>
+                </div>
+
+                <div class="rigaForm">
+                    <label for="peso">Peso (kg)</label>
+                    <input id="peso" type="number" step="0.1" name="peso" placeholder="Es. 70" required>
+                </div>
+
+                <div class="rigaForm">
+                    <label for="altezza">Altezza (cm)</label>
+                    <input id="altezza" type="number" step="0.1" name="altezza" placeholder="Es. 175" required>
+                </div>
+
+                <button type="submit" class="btn-calcola">Calcola</button>
+            </form>
+        </div>
+    </main>
+
+
+
+    <?php
+    }else{
+
+    ?>
+
+    <div class="titolo-bmi">Il tuo BMI</div>
+
+    <div class="box-risultato <?php echo $classeFascia; ?>">
+        <div class="testo-nome"><?php echo $nome; ?></div>
+        <div class="testo-dettagli">Peso <?php echo $peso; ?> kg Altezza <?php echo $altezzaCm; ?> cm</div>
+        <div class="testo-valore-bmi"><?php echo $bmi; ?></div>
+        <div class="testo-fascia"><?php echo $nomeFascia; ?></div>
+    </div>
+
+    <a href="index.html" class="link-ricalcola">Calcola di nuovo</a>
+
+
+
+    <?php
+
+    }
+    ?>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
