@@ -20,10 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 3. Controllo sui dati inseriti
     if ($nome == "") {
         $errore = "Per favore, inserisci il tuo nome.";
-    } elseif ($peso <= 0) {
-        $errore = "Il peso deve essere un numero maggiore di zero.";
-    } elseif ($altezzaCm <= 0) {
-        $errore = "L'altezza deve essere un numero maggiore di zero.";
+    } elseif ($peso <= 10 || $peso>=635) {
+        $errore = "Il peso deve essere compreso tra 10 e 635";
+    } elseif ($altezzaCm <= 54 || $altezzaCm>=272) {
+        $errore = "L'altezza deve essere compresa tra 54 e 272";
     } else {
         
         // 4. Calcolo del BMI con la tua formula originale
