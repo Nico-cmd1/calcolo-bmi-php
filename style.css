@@ -1,6 +1,5 @@
-/* ==========================================
-   RESET E STILI BASE
-   ========================================== */
+/*RESET E STILI BASE*/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,9 +14,8 @@ body {
     display: flex;
 }
 
-/* ==========================================
-   LAYOUT PER SCHERMATA FORM (GET)
-   ========================================== */
+/* LAYOUT PER SCHERMATA FORM (GET)*/
+   
 body.page-form {
     align-items: center;
     justify-content: center;
@@ -90,9 +88,11 @@ body.page-form main {
     margin-top: 8px;
 }
 
-/* ==========================================
-   LAYOUT PER SCHERMATA RISULTATO (POST)
-   ========================================== */
+
+
+
+   /*LAYOUT PER SCHERMATA RISULTATO (POST)*/
+
 body.page-result {
     flex-direction: column;
     align-items: center;
