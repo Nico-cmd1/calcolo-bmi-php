@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="index.php" method="POST">
                     <div class="rigaForm">
                         <label for="nome">Nome</label>
-                        <input id="nome" type="text" name="nome" placeholder="Inserisci il tuo nome" value="<?php echo $nome; ?>" required>
+                        <input id="nome" type="text" name="nome" placeholder="Inserisci il tuo nome" value="<?php echo $nome; ?>">
                     </div>
 
                     <div class="rigaForm">
